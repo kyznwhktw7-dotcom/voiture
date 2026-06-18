@@ -1,4 +1,4 @@
-// cars.js - charge index.json et affiche les voitures
+// cars.js - charge index.json et affiche les voitures (affiche une description par défaut si absente)
 const container = document.getElementById('cars')
 const countEl = document.getElementById('count')
 const searchInput = document.getElementById('search')
@@ -18,7 +18,13 @@ function render(filter = ''){
   values.forEach(item => {
     const el = document.createElement('div')
     el.className = 'car-card'
-    el.innerHTML = `<h3>${escapeHtml(item.name)}</h3><p>Version: ${escapeHtml(item.ver)}</p><p class="muted">ID: ${escapeHtml(item.id)}</p>`
+    const desc = item.description || 'Description non fournie.'
+    el.innerHTML = `
+      <h3>${escapeHtml(item.name)}</h3>
+      <p>${escapeHtml(desc)}</p>
+      <p>Version: ${escapeHtml(item.ver)}</p>
+      <p class="muted">ID: ${escapeHtml(item.id)}</p>
+    `
     container.appendChild(el)
   })
 }

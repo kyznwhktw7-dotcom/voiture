@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>To‑Do List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Ma To‑Do List</h1>
+
+    <form id="todo-form">
+      <input id="todo-input" type="text" placeholder="Ajouter une tâche..." autocomplete="off">
+      <button type="submit">Ajouter</button>
+    </form>
+
+    <ul id="todo-list" aria-live="polite"></ul>
+
+    <div class="actions">
+      <button id="clear-completed">Supprimer terminées</button>
+      <button id="clear-all">Supprimer tout</button>
+    </div>
+
+    <p class="hint">Les tâches sont sauvegardées dans votre navigateur (localStorage).</p>
+    <p><a href="index.html">Retour aux voitures</a></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
